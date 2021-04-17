@@ -17,8 +17,13 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
+                    <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
                         {{ __('Meu perfil') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('users.list') }}" :active="request()->routeIs('users.list')">
+                        {{ __('Usuários') }}
                     </x-jet-nav-link>
                 </div>
             </div>

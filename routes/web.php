@@ -14,13 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/users', function () {
-    return view('user.index');
-})->name('users');
+Route::middleware(['auth:sanctum', 'verified'])
+    ->group(base_path('routes/private/user.php'));
